@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pygments-sysml"
+version = "0.1.0"
+description = "Pygments lexer for SysML v2 textual notation"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "Jon R. Fox", email = "jon.fox@drfox.com" },
+]
+requires-python = ">=3.9"
+dependencies = ["pygments>=2.14"]
+
+[project.entry-points."pygments.lexers"]
+# This registers the lexer so that Pygments can find it automatically
+# via get_lexer_by_name("sysml") or get_lexer_for_filename("model.sysml")
+sysml = "sysml_lexer:SysMLLexer"
+
+[project.urls]
+Source = "https://github.com/mycr0ft/pygments-sysml"
+Grammar = "https://github.com/daltskin/sysml-v2-grammar"
