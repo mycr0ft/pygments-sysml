@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=68"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "pygments-sysml"
@@ -18,6 +18,9 @@ dependencies = ["pygments>=2.14"]
 # This registers the lexer so that Pygments can find it automatically
 # via get_lexer_by_name("sysml") or get_lexer_for_filename("model.sysml")
 sysml = "sysml_lexer:SysMLLexer"
+
+[tool.setuptools]
+py-modules = ["sysml_lexer"]
 
 [project.urls]
 Source = "https://github.com/mycr0ft/pygments-sysml"
